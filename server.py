@@ -1,0 +1,9 @@
+import os
+from src.app import create_app
+
+app = create_app()
+
+if __name__ == '__main__':
+    PORT = int(os.getenv('PORT', 5000))
+    print(f"Servidor executando na porta {PORT}...")
+    app.run(host='0.0.0.0', port=PORT, debug=True)
